@@ -28,3 +28,10 @@ body{
 	margin-left:-150px;
 	text-align:center;
 }
+
+#inputText{
+	 color:#fff;
+	 border:0px; 
+	 outline:medium;
+	 background: transparent;
+}
