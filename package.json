@@ -1,0 +1,15 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "This is our own page",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "express": "~4.13.4",
+    "request": "^2.74.0",
+    "underscore":"~1.8.3"
+  }
+}
