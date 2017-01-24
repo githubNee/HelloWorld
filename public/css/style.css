@@ -35,3 +35,7 @@ body{
 	 outline:medium;
 	 background: transparent;
 }
+
+li{
+	list-style-type:none；
+}

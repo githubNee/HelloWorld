@@ -25,6 +25,10 @@ app.get('/', function(req,res,next){
     res.sendFile('index.html')
 });
 
+app.get('/test', function(req,res,next) {
+	res.sendFile('public/html/test.html', { root: __dirname });
+})
+
 var chat = require('./routes/chat');
 app.use('/api/chat',chat);
 
@@ -32,3 +36,4 @@ app.use('/api/chat',chat);
 app.use((req,res,next)=>{
     res.send("404 not found");
 })
+

@@ -4,7 +4,6 @@ var request = require('request');
 
 router.route('/')
 .post(function(req,res,next){
-    console.log(req.body);
     if(req.body['chat'] == null) {
         res.sendStatus(400);
     } else {
