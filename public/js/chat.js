@@ -1,7 +1,8 @@
 function onPageInit() { 
 //页面初始化
-		document.getElementById('chatContentFootDiv').style.height = document.getElementById('inputDiv').offsetHeight + "px";
+	document.getElementById('chatContentFootDiv').style.height = document.getElementById('inputDiv').offsetHeight + "px";
 	}
+
 //键盘监听
 
  document.onKeyDown = function(e) {
@@ -24,6 +25,7 @@ function onPageInit() {
 
 function sendMessage() {
 	var text = document.getElementById('inputText').value;
+	
 	if (text.length > 0) {
 		//添加信息
 		document.getElementById('chatContent').innerHTML += '<li class="me" style="list-style-type:none;">' + '>>' +text + '</li>';
@@ -32,8 +34,16 @@ function sendMessage() {
 		//移动到底端
 		scrollBy(0, document.body.scrollHeight);
 
+		var url="";    
+		$.ajaxSetup({async:false}); 
+		var urlroot="route.json";   
+		$.getJSON(urlroot,function(data){    
+		
+		url=data.url_chat;    
+		})   
+
 		$.ajax({
-			url:"http://localhost:3000/api/chat",
+			url:url,
 			type:"POST",
 			data:{"chat":text},
 			success:function setReceivedMessage(data) {
