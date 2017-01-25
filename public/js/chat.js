@@ -36,10 +36,9 @@ function sendMessage() {
 
 		var url="";    
 		$.ajaxSetup({async:false}); 
-		var urlroot="route.json";   
-		$.getJSON(urlroot,function(data){    
-		
-		url=data.url_chat;    
+		var json_root="config.json";
+		$.getJSON(json_root,function(data){    
+			url = data.url + "/api/chat";
 		})   
 
 		$.ajax({
