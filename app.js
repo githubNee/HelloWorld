@@ -68,7 +68,6 @@ app.get('/', function(req,res,next){
 
 app.get('/test',(req,res,next)=>{
   res.sendfile('public/html/shell.html', { root: __dirname });
-})
 
 var chat = require('./routes/chat');
 app.use('/api/chat',chat);

@@ -1,20 +1,32 @@
-function onPageInit() { //页面初始化
+function onPageInit() { 
+//页面初始化
 		document.getElementById('chatContentFootDiv').style.height = document.getElementById('inputDiv').offsetHeight + "px";
 	}
-	//键盘监听
+//键盘监听
 
-function onKeyDown(event) {
-		if (window.event.keyCode == 13) { //按下ENTER发送消息
-			sendMessage();
-		}
-	}
-	//发出一个消息
+ document.onKeyDown = function(e) {
+    e = e ? e : window.event;
+    var keyCode = e.which ? e.which : e.keyCode;
+
+    if(e.keyCode){
+       if (e.keyCode==13){
+       	sendMessage();
+       }
+       }else{
+          if(e.which==13){
+          	sendMessage();
+          }
+       }
+}
+
+
+//发出一个消息
 
 function sendMessage() {
 	var text = document.getElementById('inputText').value;
 	if (text.length > 0) {
 		//添加信息
-		document.getElementById('chatContent').innerHTML += '<li class="me">' + text + '</li>';
+		document.getElementById('chatContent').innerHTML += '<li class="me" style="list-style-type:none;">' + '>>' +text + '</li>';
 		//清空输入框
 		document.getElementById('inputText').value = "";
 		//移动到底端
