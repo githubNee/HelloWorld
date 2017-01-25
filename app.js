@@ -1,5 +1,6 @@
 var express = require('express');
 var tty = require('tty.js');
+var fs = require('fs');
 
 var app = tty.createServer({
   shell: 'bash',
@@ -15,8 +16,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+var url = "";
+fs.readFile('public/config.json', function (err, data) {
+  url = data.url;
+});
+
 app.all('*',function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '192.168.200.135');
+  res.header('Access-Control-Allow-Origin', url);
   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , PRIVATE-TOKEN');
   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE');
 
