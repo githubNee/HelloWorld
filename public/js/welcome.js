@@ -28,13 +28,23 @@ function sendMessage() {
 
 
 	if(text == "主页"){
-		location.href =('html\/index.html');
+		window.location.href =('html/index.html');
 		//添加信息
 		document.getElementById('chatContent').innerHTML += '<li class="me" style="list-style-type:none;">' + '>>' +text + '</li>';
 		//清空输入框
 		document.getElementById('inputText').value = "";
 		//移动到底端
 		scrollBy(0, document.body.scrollHeight);
+		
+	}else if (text == "shell") {
+		window.location.href =('html/shell.html');
+		//添加信息
+		document.getElementById('chatContent').innerHTML += '<li class="me" style="list-style-type:none;">' + '>>' +text + '</li>';
+		//清空输入框
+		document.getElementById('inputText').value = "";
+		//移动到底端
+		scrollBy(0, document.body.scrollHeight);
+		
 		
 	}else if (text == "烟花") {
 		window.location='html/firework.html';
