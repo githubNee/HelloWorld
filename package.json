@@ -9,7 +9,10 @@
   "dependencies": {
     "body-parser": "~1.15.1",
     "express": "^4.14.0",
+    "pty.js": "^0.3.1",
     "request": "^2.74.0",
-    "underscore": "~1.8.3"
+    "socket.io": "^1.7.2",
+    "underscore": "~1.8.3",
+    "xterm": "^2.2.3"
   }
 }
