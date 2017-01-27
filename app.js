@@ -26,7 +26,7 @@ app.use('/api/chat',chat);
 var io = require('socket.io')(server);
 io.on('connection', function(socket){
 // Create terminal
-	var term = pty.spawn('sh', [], {
+	var term = pty.spawn('ssh', [], {
 	   name: 'xterm-color',
 	   cols: 80,
 	   rows: 30,
@@ -53,3 +53,21 @@ app.get('/shell',function(req,res,next){
 app.use((req,res,next)=>{
     res.send("404 not found");
 })
+
+
+
+var tty = require('tty.js');
+
+var app2 = tty.createServer({
+  shell: 'ssh',
+  // hostname: '115.159.55.131',
+
+  users: {
+    nee: 'nee960610',
+    wang: 'wang961125'
+  },
+  port: 8000
+});
+
+
+app2.listen();
