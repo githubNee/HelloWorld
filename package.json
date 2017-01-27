@@ -10,7 +10,6 @@
     "body-parser": "~1.15.1",
     "express": "^4.14.0",
     "request": "^2.74.0",
-    "tty.js": "^0.2.15",
     "underscore": "~1.8.3"
   }
 }
