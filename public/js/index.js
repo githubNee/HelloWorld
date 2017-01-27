@@ -1,7 +1,7 @@
 for (var i = 0; i < 40; i++) {
     var d = document.createElement('div');
     d.className = 'bubble';
-    var a = Math.random() * 15 + 20 + 'px';
+    var a = Math.random() * 10 + 10 + 'px';
     d.style.width = a;d.style.height = a;
     d.style.bottom = Math.random() * 500 + 'px';d.style.left = Math.random() * document.body.offsetWidth + 'px';
     document.body.appendChild(d);Animate(d)
