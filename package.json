@@ -10,6 +10,11 @@
     "body-parser": "~1.15.1",
     "express": "^4.14.0",
     "request": "^2.74.0",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "basic-auth-connect": "^1.0.0",
+    "pty.js": ">= 0.2.13",
+    "serve-favicon": "^2.3.2",
+    "socket.io": "0.9.16",
+    "term.js": ">= 0.0.5"
   }
 }

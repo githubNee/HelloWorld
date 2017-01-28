@@ -1,5 +1,5 @@
 var express = require('express');
-var tty = require('./dependencies/tty.js/lib/tty.js');
+var tty = require('./routes/tty');
 
 var path = require('path');
 var request = require('request');
@@ -20,7 +20,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
   
 app.get('/', function(req,res,next){
-	console.log('hai ~');
     res.sendFile('public/welcome.html', { root: __dirname });
 });
   
