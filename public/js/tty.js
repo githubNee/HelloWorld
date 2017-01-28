@@ -13,9 +13,7 @@ var document = this.document
   , window = this
   , root
   , body
-  , h1
-  , open
-  , lights;
+  , open;
 
 /**
  * Initial Document Title
@@ -69,28 +67,20 @@ tty.open = function() {
   tty.elements = {
     root: document.documentElement,
     body: document.body,
-    h1: document.getElementsByTagName('h1')[0],
-    open: document.getElementById('open'),
-    lights: document.getElementById('lights')
+    open: document.getElementById('open')
   };
 
   root = tty.elements.root;
   body = tty.elements.body;
-  h1 = tty.elements.h1;
   open = tty.elements.open;
-  lights = tty.elements.lights;
 
   if (open) {
     on(open, 'click', function() {
-      new Window;
+      if(tty.windows.length == 0)
+        new Window;
     });
   }
 
-  if (lights) {
-    on(lights, 'click', function() {
-      tty.toggleLights();
-    });
-  }
 
   tty.socket.on('connect', function() {
     tty.reset();
