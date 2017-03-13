@@ -23,10 +23,12 @@ router.route('/')
         };
         opts.body = JSON.stringify(reqBody);
         request(opts, function (error, response, body) {
-            var data = {};
+            var data = {},
+                value = {};
             if (!error) {
                 data = JSON.parse(body);
-                res.send(data);
+                value.chat = data['text'];
+                res.send(value);
             } else 
                 res.sendStatus(500);
         });

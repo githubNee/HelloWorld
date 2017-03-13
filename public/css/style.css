@@ -2,6 +2,7 @@ body{
 	background:#000000;
 	color:#00FF00;
 	font-family:monospace;
+	font-size:18px;
 }
 
 .accessGranted{
@@ -30,10 +31,11 @@ body{
 }
 
 #inputText{
-	 color:#fff;
-	 border:0px; 
-	 outline:medium;
-	 background: transparent;
+	font-family:monospace;
+	color:#fff;
+	border:0px; 
+	outline:medium;
+	background: transparent;
 }
 
 li{
