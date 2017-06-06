@@ -41,3 +41,13 @@ body{
 li{
 	list-style-type:none；
 }
+
+input:-ms-input-placeholder{
+    color: #777;
+    opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #777;
+    opacity:1;
+}

@@ -30,7 +30,7 @@ function sendMessage() {
 	var text = document.getElementById('inputText').value;
 
 
-	if(text == "homepage"){
+	if(text == "cd home"){
 		window.location.href =('html/index.html');
 	} else if (text == "firework") {
 		window.location='html/firework.html';
