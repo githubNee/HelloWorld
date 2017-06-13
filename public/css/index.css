@@ -1,57 +1,8 @@
-/*.bg .large-header {
-	height: 100%;
-	width:100%;
-	background-image: url('/image/background.png');
-	background-position: center bottom;
+@font-face {
+  font-family: tiza;
+  src: url('../fonts/tiza.ttf');
+  font-weight: lighter;
 }
-
-.main-title {
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	color: #f9f1e9;
-	text-align: center;
-	top: 40%;
-	left: 50%;
-	-webkit-transform: translate3d(-50%,-50%,0);
-	transform: translate3d(-50%,-50%,0);
-}
-
-.bg .main-title {
-	font-family: 'Clicker Script', cursive;
-	font-weight: normal;
-	font-size: 8em;
-	padding-left: 10px;
-	text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-}
-
-.bg .main-title::before {
-	content: '';
-	width: 20vw;
-	height: 20vw;
-	min-width: 3.5em;
-	min-height: 3.5em;
-	background-size: cover;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border-radius: 50%;
-	z-index: -1;
-	-webkit-transform: translate3d(-50%,-50%,0);
-	transform: translate3d(-50%,-50%,0);
-}
-
-.main-title .thin {
-	font-weight: 200;
-}
-
-@media only screen and (max-width : 768px) {
-
-	.bg .main-title {
-		font-size: 4em;
-	}
-}*/
-
 body,
 html {
     width: 100%;
@@ -63,14 +14,14 @@ html {
 }
 
 .bubble {
-    background: red;
+    background: orange;
     opacity: 0.2;
     position: fixed;
     border-radius: 100%
 }
 
 p {
-    font-family: 'Clicker Script', cursive;
+    font-family: 'tiza', tiza;
     color: #fff;
     margin-top: 20%;
     position: absolute;
@@ -92,4 +43,3 @@ p {
     border: 2px solid #fff;
     cursor: pointer
 }
-

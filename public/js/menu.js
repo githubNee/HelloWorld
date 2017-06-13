@@ -19,11 +19,11 @@ class Item {
             timeOut = setTimeout(function() {
                 if (element.next && element.isMoving) {
                     element.next.moveTo(element);
-                } 
+                }
             }, 10);
         });
     }
-    
+
     moveTo(item) {
         anime({
             targets: this.$element[0],
@@ -37,14 +37,14 @@ class Item {
         }
     }
 
-    updatePosition() {    
+    updatePosition() {
         anime({
             targets: this.$element[0],
             left: this.prev.$element.css("left"),
             top: this.prev.$element.css("top"),
             duration: 200
         });
-        
+
         if (this.next) {
             this.next.updatePosition();
         }
@@ -61,7 +61,7 @@ class Menu {
         this.hasMoved = false;
         this.status = "closed";
     }
-    
+
     add(item) {
         var menu = this;
         if (this.first == null) {
@@ -69,17 +69,17 @@ class Menu {
             this.last = item;
             this.first.$element.on("mouseup", function() {
                 if (menu.first.isMoving) {
-                    menu.first.isMoving = false;        
+                    menu.first.isMoving = false;
                 } else {
                     menu.click();
                 }
-            }); 
+            });
             item.$element.draggable(
                 {
                     start: function() {
                         menu.close();
                         item.isMoving = true;
-                    }  
+                    }
                 },
                 {
                     drag: function() {
@@ -101,10 +101,10 @@ class Menu {
             this.last = item;
         }
         this.$element.after(item.$element);
-        
-        
+
+
     }
-    
+
     open() {
         this.status = "open";
         var current = this.first.next;
@@ -114,15 +114,15 @@ class Menu {
         while (current != null) {
             anime({
                 targets: current.$element[0],
-                left: parseInt(head.$element.css("left"), 10) + (sens * (iterator * 50)),
+                left: parseInt(head.$element.css("left"), 10) + (sens * (iterator * 60)),
                 top: head.$element.css("top"),
                 duration: 500
             });
             iterator++;
             current = current.next;
-        }    
+        }
     }
-    
+
     close() {
         this.status = "closed";
         var current = this.first.next;
@@ -139,7 +139,7 @@ class Menu {
             current = current.next;
         }
     }
-    
+
     click() {
         if (this.status == "closed") {
             this.open();
@@ -147,15 +147,15 @@ class Menu {
             this.close();
         }
     }
-    
+
 }
 
 var menu = new Menu("#myMenu");
-var item1 = new Item("list");
+var item1 = new Item("home");
 var item2 = new Item("torso", "#FF5C5C");
-var item3 = new Item("social-facebook", "#5CD1FF");
-var item4 = new Item("paypal", "#FFF15C");
-var item5 = new Item("link", "#64F592");
+var item3 = new Item("social-blogger", "#5CD1FF");
+var item4 = new Item("social-deviant-art", "#FFF15C");
+var item5 = new Item("guide-dog", "#64F592");
 
 menu.add(item1);
 menu.add(item2);
