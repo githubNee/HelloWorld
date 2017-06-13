@@ -2,10 +2,14 @@
 var timeOut;
 
 class Item {
-    constructor(icon, backgroundColor) {
+    constructor(icon, backgroundColor, flag, href) {
         this.$element = $(document.createElement("div"));
         this.icon = icon;
         this.$element.addClass("item");
+        if (flag == true) {
+            this.$element.attr("onclick", "window.location.href=\'" + href + "\'")
+        }
+        // console.log(href)
         this.$element.css("background-color", backgroundColor);
         var i = document.createElement("i");
         $(i).addClass("fi-" + icon);
@@ -42,7 +46,7 @@ class Item {
             targets: this.$element[0],
             left: this.prev.$element.css("left"),
             top: this.prev.$element.css("top"),
-            duration: 200
+            duration: 150
         });
 
         if (this.next) {
@@ -152,8 +156,8 @@ class Menu {
 
 var menu = new Menu("#myMenu");
 var item1 = new Item("home");
-var item2 = new Item("torso", "#FF5C5C");
-var item3 = new Item("social-blogger", "#5CD1FF");
+var item2 = new Item("torso", "#FF5C5C", true, "/home");
+var item3 = new Item("social-blogger", "#5CD1FF", true, "https://github.com/githubNee/HelloWorld");
 var item4 = new Item("social-deviant-art", "#FFF15C");
 var item5 = new Item("guide-dog", "#64F592");
 
