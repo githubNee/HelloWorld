@@ -1,11 +1,16 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  overflow: hidden;
+}
 
-/* basic styles for black background and crosshair cursor */
-body {
-	background: #000;
-	margin: 0;
+#library {
+  display: none;
 }
 
 canvas {
-	cursor: crosshair;
-	display: block;
+  -webkit-transform: translateZ(0);
 }

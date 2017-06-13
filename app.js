@@ -10,7 +10,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
   
-app.get('/', function(req,res,next){
+app.get('/', function(req, res, next) {
+	res.sendFile('public/html/help.html', {root:__dirname});
+})
+app.get('/home', function(req,res,next){
     res.sendFile('public/welcome.html', { root: __dirname });
 });
   

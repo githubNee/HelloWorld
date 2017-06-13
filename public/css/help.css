@@ -41,10 +41,10 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 }
 /* line 26, ../../_sass/404.scss */
 #not-found body #holder {
-  display: table-cell;
-  vertical-align: center;
+  /*display: table-cell;*/
+  /*vertical-align: center;*/
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10px 20px;
 }
 /* line 32, ../../_sass/404.scss */
 #not-found body #story1,
@@ -53,6 +53,10 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   max-width: 100%;
   white-space: pre;
   line-height: 1.25em;
+}
+a {
+  text-decoration: none;
+  color: #dddddd;
 }
 /* line 38, ../../_sass/404.scss */
 #not-found body #story1:after {
